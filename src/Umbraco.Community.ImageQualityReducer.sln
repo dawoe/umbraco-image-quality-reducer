@@ -17,10 +17,26 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Linting", "Linting", "{49C9
 		stylecop.json = stylecop.json
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Package", "Package", "{C0A20887-D79A-4B79-89D4-79B69B53AD2E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umbraco.Community.ImageQualityReducer", "Package\code\Umbraco.Community.ImageQualityReducer.csproj", "{61E24DB4-0B47-49F6-AC30-3FAE53CB2796}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Community.ImageQualityReducer.Tests", "Package\tests\Umbraco.Community.ImageQualityReducer.Tests.csproj", "{7C350C4B-DA31-4C3C-A07D-8E011F3E4D00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61E24DB4-0B47-49F6-AC30-3FAE53CB2796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61E24DB4-0B47-49F6-AC30-3FAE53CB2796}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61E24DB4-0B47-49F6-AC30-3FAE53CB2796}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61E24DB4-0B47-49F6-AC30-3FAE53CB2796}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C350C4B-DA31-4C3C-A07D-8E011F3E4D00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C350C4B-DA31-4C3C-A07D-8E011F3E4D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C350C4B-DA31-4C3C-A07D-8E011F3E4D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C350C4B-DA31-4C3C-A07D-8E011F3E4D00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -28,6 +44,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{21AACAC8-44FB-4858-B19F-B83567420105} = {196AD78F-11F3-4A60-A51E-747C18A6BB1A}
 		{49C9010D-8B3A-4544-80B5-525318AA6127} = {196AD78F-11F3-4A60-A51E-747C18A6BB1A}
+		{61E24DB4-0B47-49F6-AC30-3FAE53CB2796} = {C0A20887-D79A-4B79-89D4-79B69B53AD2E}
+		{7C350C4B-DA31-4C3C-A07D-8E011F3E4D00} = {C0A20887-D79A-4B79-89D4-79B69B53AD2E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F9AF03E7-0EA9-4D85-9D8C-6FE39EFB59E9}
