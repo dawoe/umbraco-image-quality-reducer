@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/StyleCop.Analyzers/StyleCop.Analyzers/Settings/stylecop.schema.json",
+  "settings": {
+    "orderingRules": {
+      "usingDirectivesPlacement": "outsideNamespace",
+      "elementOrder": [
+        "kind"
+      ]
+    },
+    "documentationRules": {
+      "xmlHeader": true,
+      "documentInternalElements": true,
+      "copyrightText": "Copyright (c) Dave Woestenborghs and contributors",
+      "companyName": "Umbraco Community"
+    },
+    "namingRules": {
+      "allowedNamespaceComponents": ["Umbraco"]
+    }
+  }
+}

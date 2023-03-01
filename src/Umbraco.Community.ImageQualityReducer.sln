@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{196AD78F-11F3-4A60-A51E-747C18A6BB1A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildProps", "BuildProps", "{21AACAC8-44FB-4858-B19F-B83567420105}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		Directory.Build.Tests.props.xml = Directory.Build.Tests.props.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Linting", "Linting", "{49C9010D-8B3A-4544-80B5-525318AA6127}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		stylecop.json = stylecop.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Package", "Package", "{C0A20887-D79A-4B79-89D4-79B69B53AD2E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umbraco.Community.ImageQualityReducer", "Package\code\Umbraco.Community.ImageQualityReducer.csproj", "{61E24DB4-0B47-49F6-AC30-3FAE53CB2796}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umbraco.Community.ImageQualityReducer.Tests", "Package\tests\Umbraco.Community.ImageQualityReducer.Tests.csproj", "{7C350C4B-DA31-4C3C-A07D-8E011F3E4D00}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{C1D7D8C9-D634-464E-B938-3D3180538180}"
+	ProjectSection(SolutionItems) = preProject
+		..\Utilities\CreateNugetPackages.ps1 = ..\Utilities\CreateNugetPackages.ps1
+		..\Utilities\SetupTestSite.ps1 = ..\Utilities\SetupTestSite.ps1
+		..\Utilities\StartTestSite.ps1 = ..\Utilities\StartTestSite.ps1
+		..\Utilities\UpdateTestSites.ps1 = ..\Utilities\UpdateTestSites.ps1
+		..\Utilities\Variables.ps1 = ..\Utilities\Variables.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github Actions", "Github Actions", "{05DE59E3-EC60-4F00-83E6-A47605396A10}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\pr-validation.yml = ..\.github\workflows\pr-validation.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61E24DB4-0B47-49F6-AC30-3FAE53CB2796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61E24DB4-0B47-49F6-AC30-3FAE53CB2796}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61E24DB4-0B47-49F6-AC30-3FAE53CB2796}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61E24DB4-0B47-49F6-AC30-3FAE53CB2796}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C350C4B-DA31-4C3C-A07D-8E011F3E4D00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C350C4B-DA31-4C3C-A07D-8E011F3E4D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C350C4B-DA31-4C3C-A07D-8E011F3E4D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C350C4B-DA31-4C3C-A07D-8E011F3E4D00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{21AACAC8-44FB-4858-B19F-B83567420105} = {196AD78F-11F3-4A60-A51E-747C18A6BB1A}
+		{49C9010D-8B3A-4544-80B5-525318AA6127} = {196AD78F-11F3-4A60-A51E-747C18A6BB1A}
+		{61E24DB4-0B47-49F6-AC30-3FAE53CB2796} = {C0A20887-D79A-4B79-89D4-79B69B53AD2E}
+		{7C350C4B-DA31-4C3C-A07D-8E011F3E4D00} = {C0A20887-D79A-4B79-89D4-79B69B53AD2E}
+		{C1D7D8C9-D634-464E-B938-3D3180538180} = {196AD78F-11F3-4A60-A51E-747C18A6BB1A}
+		{05DE59E3-EC60-4F00-83E6-A47605396A10} = {196AD78F-11F3-4A60-A51E-747C18A6BB1A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F9AF03E7-0EA9-4D85-9D8C-6FE39EFB59E9}
+	EndGlobalSection
+EndGlobal
