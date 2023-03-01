@@ -1,5 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <Import Project="../../Directory.Build.Tests.props.xml" />
+
   <ItemGroup>
     <ProjectReference Include="..\code\Umbraco.Community.ImageQualityReducer.csproj" />
   </ItemGroup>
