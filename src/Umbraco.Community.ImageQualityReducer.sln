@@ -21,7 +21,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Package", "Package", "{C0A2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umbraco.Community.ImageQualityReducer", "Package\code\Umbraco.Community.ImageQualityReducer.csproj", "{61E24DB4-0B47-49F6-AC30-3FAE53CB2796}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Community.ImageQualityReducer.Tests", "Package\tests\Umbraco.Community.ImageQualityReducer.Tests.csproj", "{7C350C4B-DA31-4C3C-A07D-8E011F3E4D00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umbraco.Community.ImageQualityReducer.Tests", "Package\tests\Umbraco.Community.ImageQualityReducer.Tests.csproj", "{7C350C4B-DA31-4C3C-A07D-8E011F3E4D00}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{C1D7D8C9-D634-464E-B938-3D3180538180}"
+	ProjectSection(SolutionItems) = preProject
+		..\Utilities\CreateNugetPackages.ps1 = ..\Utilities\CreateNugetPackages.ps1
+		..\Utilities\SetupTestSite.ps1 = ..\Utilities\SetupTestSite.ps1
+		..\Utilities\StartTestSite.ps1 = ..\Utilities\StartTestSite.ps1
+		..\Utilities\UpdateTestSites.ps1 = ..\Utilities\UpdateTestSites.ps1
+		..\Utilities\Variables.ps1 = ..\Utilities\Variables.ps1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +55,7 @@ Global
 		{49C9010D-8B3A-4544-80B5-525318AA6127} = {196AD78F-11F3-4A60-A51E-747C18A6BB1A}
 		{61E24DB4-0B47-49F6-AC30-3FAE53CB2796} = {C0A20887-D79A-4B79-89D4-79B69B53AD2E}
 		{7C350C4B-DA31-4C3C-A07D-8E011F3E4D00} = {C0A20887-D79A-4B79-89D4-79B69B53AD2E}
+		{C1D7D8C9-D634-464E-B938-3D3180538180} = {196AD78F-11F3-4A60-A51E-747C18A6BB1A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F9AF03E7-0EA9-4D85-9D8C-6FE39EFB59E9}
