@@ -1,3 +1,7 @@
+// <copyright file="ImageQualityReducerComposerTests.cs" company="Umbraco Community">
+// Copyright (c) Dave Woestenborghs and contributors
+// </copyright>
+
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
