@@ -18,7 +18,7 @@ namespace Umbraco.Community.ImageQualityReducer.Tests
         [Test]
         public void When_No_Config_Present_Default_Config_Should_Be_Returned()
         {
-            this.Compose("appsettings.noConfig.json");
+            this.Compose("appSettings.noConfig.json");
 
             var options = this.serviceProvider.GetRequiredService<IOptions<Configuration>>();
 
@@ -35,7 +35,7 @@ namespace Umbraco.Community.ImageQualityReducer.Tests
         [Test]
         public void When_No_Config_Is_Present_It_Should_Be_Returned()
         {
-            this.Compose("appsettings.json");
+            this.Compose("appSettings.json");
 
             var options = this.serviceProvider.GetRequiredService<IOptions<Configuration>>();
 
