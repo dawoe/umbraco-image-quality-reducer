@@ -42,21 +42,10 @@ namespace Umbraco.Community.ImageQualityReducer
 
         private void DecorateImageUrlGenerator(IUmbracoBuilder builder)
         {
-            // decorate
-            var imageUrlGenerator =
-                builder.Services.SingleOrDefault(x => x.ServiceType == typeof(IImageUrlGenerator));
-
-            if (imageUrlGenerator is null)
-            {
-                return;
-            }
-
-            // get the instance
+            // get the actual instance
             var instance = builder.Services.BuildServiceProvider().GetRequiredService<IImageUrlGenerator>();
 
-            // remove the existing registration.
-            builder.Services.Remove(imageUrlGenerator);
-
+            // add decorated instance.
             builder.Services.AddSingleton<IImageUrlGenerator>(_ => new DecoratedImageUrlGenerator(instance));
         }
 

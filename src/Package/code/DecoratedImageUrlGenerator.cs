@@ -10,7 +10,7 @@ namespace Umbraco.Community.ImageQualityReducer
     /// <summary>
     /// A decorated <see cref="IImageUrlGenerator"/> that allows us to append the image quality querystring if needed.
     /// </summary>
-    internal sealed class DecoratedImageUrlGenerator: IImageUrlGenerator
+    internal sealed class DecoratedImageUrlGenerator : IImageUrlGenerator
     {
         private readonly IImageUrlGenerator innerGenerator;
 

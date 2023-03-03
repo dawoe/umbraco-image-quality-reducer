@@ -10,12 +10,11 @@ using Moq;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Media;
-using Umbraco.Cms.Core.Models;
 
 namespace Umbraco.Community.ImageQualityReducer.Tests
 {
     [TestFixture]
-    internal sealed class ImageQualityReducerComposerTests
+    internal sealed partial class ImageQualityReducerComposerTests
     {
         private ServiceCollection serviceCollection = null!;
         private IUmbracoBuilder builder = null!;
@@ -105,13 +104,6 @@ namespace Umbraco.Community.ImageQualityReducer.Tests
             composer.Compose(this.builder);
 
             this.serviceProvider = this.serviceCollection.BuildServiceProvider();
-        }
-
-        private class NoopImageUrlGenerator : IImageUrlGenerator
-        {
-            public IEnumerable<string> SupportedImageFileTypes { get; } = Enumerable.Empty<string>();
-
-            public string? GetImageUrl(ImageUrlGenerationOptions options) => options?.ImageUrl;
         }
     }
 }
