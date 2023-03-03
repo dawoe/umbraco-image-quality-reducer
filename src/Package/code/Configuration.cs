@@ -23,7 +23,7 @@ namespace Umbraco.Community.ImageQualityReducer
         public bool Enabled { get; set; }
 
         /// <summary>
-        /// Gets a or sets a value indicating whether the image quality should be set as a querystring parameter.
+        /// Gets or sets a value indicating whether the image quality should be set as a querystring parameter.
         /// </summary>
         public bool UseQueryString { get; set; }
 
