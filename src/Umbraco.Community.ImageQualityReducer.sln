@@ -34,6 +34,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github Actions", "Github Actions", "{05DE59E3-EC60-4F00-83E6-A47605396A10}"
 	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\myget-release.yml = ..\.github\workflows\myget-release.yml
 		..\.github\workflows\pr-validation.yml = ..\.github\workflows\pr-validation.yml
 	EndProjectSection
 EndProject
