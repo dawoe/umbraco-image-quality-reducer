@@ -4,6 +4,7 @@
 
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Media;
@@ -25,28 +26,26 @@ namespace Umbraco.Community.ImageQualityReducer
 
         private void Configure(IUmbracoBuilder builder)
         {
-            var config = new Configuration();
+            var config = builder.Services.BuildServiceProvider().GetRequiredService<IOptions<Configuration>>();
 
-            builder.Config.GetSection(Configuration.SectionName).Bind(config);
-
-            if (config.Enabled == false)
+            if (config.Value.Enabled == false)
             {
                 return;
             }
 
-            if (config.UseQueryString)
+            if (config.Value.UseQueryString)
             {
-                this.DecorateImageUrlGenerator(builder);
+                this.DecorateImageUrlGenerator(builder, config);
             }
         }
 
-        private void DecorateImageUrlGenerator(IUmbracoBuilder builder)
+        private void DecorateImageUrlGenerator(IUmbracoBuilder builder, IOptions<Configuration> config)
         {
             // get the actual instance
             var instance = builder.Services.BuildServiceProvider().GetRequiredService<IImageUrlGenerator>();
 
             // add decorated instance.
-            builder.Services.AddSingleton<IImageUrlGenerator>(_ => new DecoratedImageUrlGenerator(instance));
+            builder.Services.AddSingleton<IImageUrlGenerator>(_ => new DecoratedImageUrlGenerator(instance, config));
         }
 
         private void LoadConfiguration(IUmbracoBuilder builder) => builder.Services.AddOptions<Configuration>().Bind(builder.Config.GetSection(Configuration.SectionName));
