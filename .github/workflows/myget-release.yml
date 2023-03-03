@@ -50,6 +50,7 @@ jobs:
         
       - name: Pack
         run: dotnet pack -c ${{ env.BUILD_CONFIG }} --no-restore --no-build --output ${{ env.NuGetDirectory }} --version-suffix ${{github.run_number}}
+        working-directory: src/
         
       - name: Artifacts
         uses: actions/upload-artifact@v3
