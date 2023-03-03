@@ -12,7 +12,7 @@ namespace Umbraco.Community.ImageQualityReducer
     /// </summary>
     internal sealed class DecoratedImageUrlGenerator: IImageUrlGenerator
     {
-        private IImageUrlGenerator innerGenerator;
+        private readonly IImageUrlGenerator innerGenerator;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DecoratedImageUrlGenerator"/> class.
@@ -21,9 +21,9 @@ namespace Umbraco.Community.ImageQualityReducer
         public DecoratedImageUrlGenerator(IImageUrlGenerator innerGenerator) => this.innerGenerator = innerGenerator;
 
         /// <inheritdoc/>
-        public string? GetImageUrl(ImageUrlGenerationOptions options) => this.innerGenerator.GetImageUrl(options);
+        public IEnumerable<string> SupportedImageFileTypes => this.innerGenerator.SupportedImageFileTypes;
 
         /// <inheritdoc/>
-        public IEnumerable<string> SupportedImageFileTypes => this.innerGenerator.SupportedImageFileTypes;
+        public string? GetImageUrl(ImageUrlGenerationOptions options) => this.innerGenerator.GetImageUrl(options);
     }
 }

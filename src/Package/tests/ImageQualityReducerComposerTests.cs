@@ -9,6 +9,8 @@ using Microsoft.Extensions.Options;
 using Moq;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Media;
+using Umbraco.Cms.Core.Models;
 
 namespace Umbraco.Community.ImageQualityReducer.Tests
 {
@@ -55,6 +57,36 @@ namespace Umbraco.Community.ImageQualityReducer.Tests
             });
         }
 
+        [Test]
+        public void When_Enabled_And_UseQueryString_ImageUrlGenerator_Should_Be_Decorated()
+        {
+            this.Compose("appSettings.json");
+
+            var generator = this.serviceProvider.GetRequiredService<IImageUrlGenerator>();
+
+            Assert.That(generator, Is.InstanceOf<DecoratedImageUrlGenerator>());
+        }
+
+        [Test]
+        public void When_Enabled_And_UseQueryString_Is_False_ImageUrlGenerator_Should_Not_Be_Decorated()
+        {
+            this.Compose("appSettings.noQueryString.json");
+
+            var generator = this.serviceProvider.GetRequiredService<IImageUrlGenerator>();
+
+            Assert.That(generator, Is.InstanceOf<NoopImageUrlGenerator>());
+        }
+
+        [Test]
+        public void When_Disabled_ImageUrlGenerator_Should_Not_Be_Decorated()
+        {
+            this.Compose("appSettings.noConfig.json");
+
+            var generator = this.serviceProvider.GetRequiredService<IImageUrlGenerator>();
+
+            Assert.That(generator, Is.InstanceOf<NoopImageUrlGenerator>());
+        }
+
         private void Compose(string appSettingsFile)
         {
             var configBuilder = new ConfigurationBuilder()
@@ -64,6 +96,8 @@ namespace Umbraco.Community.ImageQualityReducer.Tests
             var config = configBuilder.Build();
             this.serviceCollection = new ServiceCollection();
 
+            this.serviceCollection.AddSingleton<IImageUrlGenerator, NoopImageUrlGenerator>();
+
             this.builder = new UmbracoBuilder(this.serviceCollection, config, new TypeLoader(Mock.Of<ITypeFinder>(), Mock.Of<ILogger<TypeLoader>>()));
 
             var composer = new ImageQualityReducerComposer();
@@ -71,6 +105,13 @@ namespace Umbraco.Community.ImageQualityReducer.Tests
             composer.Compose(this.builder);
 
             this.serviceProvider = this.serviceCollection.BuildServiceProvider();
+        }
+
+        private class NoopImageUrlGenerator : IImageUrlGenerator
+        {
+            public IEnumerable<string> SupportedImageFileTypes { get; } = Enumerable.Empty<string>();
+
+            public string? GetImageUrl(ImageUrlGenerationOptions options) => options?.ImageUrl;
         }
     }
 }
