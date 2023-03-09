@@ -14,7 +14,7 @@ using Umbraco.Cms.Core.Media;
 namespace Umbraco.Community.ImageQualityReducer.Tests
 {
     [TestFixture]
-    internal sealed partial class ImageQualityReducerComposerTests
+    internal sealed class ImageQualityReducerComposerTests
     {
         private ServiceCollection serviceCollection = null!;
         private IUmbracoBuilder builder = null!;

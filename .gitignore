@@ -3,3 +3,4 @@ src/.vs/
 [Oo]bj
 testsites/
 *.user
+src/TestResults/
