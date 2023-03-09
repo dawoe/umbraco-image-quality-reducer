@@ -85,4 +85,10 @@ jobs:
         run: |
           foreach($file in (Get-ChildItem "${{ env.NuGetDirectory }}" -Recurse -Include *.nupkg)) {
               dotnet nuget push $file --api-key "${{ secrets.MYGET_API_KEY }}" --source https://www.myget.org/F/dawoe-umbraco/api/v2/package --skip-duplicate
-          }          
+          }
+          
+      - name: Publish NuGet Symbols
+        run: |
+          foreach($file in (Get-ChildItem "${{ env.NuGetDirectory }}" -Recurse -Include *.snupkg)) {
+              dotnet nuget push $file --api-key "${{ secrets.MYGET_API_KEY }}" --source https://www.myget.org/F/dawoe-umbraco/api/v2/package --skip-duplicate
+          } 
