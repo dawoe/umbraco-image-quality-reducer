@@ -7,6 +7,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="appSettings.noQueryString.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="appSettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
