@@ -29,7 +29,7 @@
       <Company />
       <PackageProjectUrl>https://github.com/dawoe/umbraco-image-quality-reducer</PackageProjectUrl>
       <RepositoryUrl>https://github.com/dawoe/umbraco-image-quality-reducer</RepositoryUrl>
-      <PackageIcon></PackageIcon>
+      <PackageIcon>logo.png</PackageIcon>
       <PackageIconUrl />
       <Description>A package that allows setting the image quality globally for images processed by ImageSharp</Description>
       <PackageTags>umbraco, umbraco-marketplace</PackageTags>
@@ -53,6 +53,10 @@
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
       <_Parameter1>DynamicProxyGenAssembly2</_Parameter1>
     </AssemblyAttribute>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../assets/logo.png" Pack="true" PackagePath="\" Visible="false" />
   </ItemGroup>
 
 </Project>
