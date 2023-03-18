@@ -53,7 +53,7 @@ jobs:
         run: cat reports/Summary.md >> $GITHUB_STEP_SUMMARY
         
       - name: Pack
-        run: dotnet pack -c ${{ env.BUILD_CONFIG }} --no-restore --no-build --output ${{ env.NuGetDirectory }} --version-suffix ${{github.run_number}}
+        run: dotnet pack -c ${{ env.BUILD_CONFIG }} --no-restore --no-build --output ${{ env.NuGetDirectory }} --version-suffix beta-${{github.run_number}}
         working-directory: src/
         
       - name: Artifacts
