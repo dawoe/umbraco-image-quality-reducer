@@ -2,13 +2,11 @@
 // Copyright (c) Dave Woestenborghs and contributors
 // </copyright>
 
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Media;
-using Umbraco.Cms.Web.Common.Media;
 
 namespace Umbraco.Community.ImageQualityReducer
 {
@@ -36,6 +34,10 @@ namespace Umbraco.Community.ImageQualityReducer
             if (config.Value.UseQueryString)
             {
                 this.DecorateImageUrlGenerator(builder, config);
+            }
+            else
+            {
+                builder.Services.ConfigureOptions<ImageSharpMiddlewareOptionsConfiguration>();
             }
         }
 
