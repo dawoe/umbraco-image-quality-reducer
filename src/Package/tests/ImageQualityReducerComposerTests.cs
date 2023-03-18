@@ -67,6 +67,14 @@ namespace Umbraco.Community.ImageQualityReducer.Tests
         }
 
         [Test]
+        public void When_Enabled_And_UseQueryString_ImageSharpMiddleWareOptions_Should_Not_Be_Registered()
+        {
+            this.Compose("appSettings.json");
+
+            Assert.That(this.serviceCollection.Any(x => x.ImplementationType == typeof(ImageSharpMiddlewareOptionsConfiguration) && x.Lifetime == ServiceLifetime.Transient), Is.False);
+        }
+
+        [Test]
         public void When_Enabled_And_UseQueryString_Is_False_ImageUrlGenerator_Should_Not_Be_Decorated()
         {
             this.Compose("appSettings.noQueryString.json");
@@ -77,6 +85,14 @@ namespace Umbraco.Community.ImageQualityReducer.Tests
         }
 
         [Test]
+        public void When_Enabled_And_UseQueryString_Is_False_ImageSharpMiddleWareOptions_Should_Be_Registered()
+        {
+            this.Compose("appSettings.noQueryString.json");
+
+            Assert.That(this.serviceCollection.Any(x => x.ImplementationType == typeof(ImageSharpMiddlewareOptionsConfiguration) && x.Lifetime == ServiceLifetime.Transient), Is.True);
+        }
+
+        [Test]
         public void When_Disabled_ImageUrlGenerator_Should_Not_Be_Decorated()
         {
             this.Compose("appSettings.noConfig.json");
@@ -84,6 +100,14 @@ namespace Umbraco.Community.ImageQualityReducer.Tests
             var generator = this.serviceProvider.GetRequiredService<IImageUrlGenerator>();
 
             Assert.That(generator, Is.InstanceOf<NoopImageUrlGenerator>());
+        }
+
+        [Test]
+        public void When_Disabled_ImageSharpMiddleWareOptions_Should_Not_Be_Registered()
+        {
+            this.Compose("appSettings.noConfig.json");
+
+            Assert.That(this.serviceCollection.Any(x => x.ImplementationType == typeof(ImageSharpMiddlewareOptionsConfiguration) && x.Lifetime == ServiceLifetime.Transient), Is.False);
         }
 
         private void Compose(string appSettingsFile)
