@@ -29,8 +29,8 @@
       <Company />
       <PackageProjectUrl>https://github.com/dawoe/umbraco-image-quality-reducer</PackageProjectUrl>
       <RepositoryUrl>https://github.com/dawoe/umbraco-image-quality-reducer</RepositoryUrl>
-      <PackageIcon>logo.png</PackageIcon>
       <PackageIconUrl />
+      <PackageIcon>logo.png</PackageIcon>
       <Description>A package that allows setting the image quality globally for images processed by ImageSharp</Description>
       <PackageTags>umbraco, umbraco-marketplace</PackageTags>
       <RepositoryType>git</RepositoryType>
