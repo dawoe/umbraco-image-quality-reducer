@@ -38,6 +38,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github Actions", "Github Ac
 		..\.github\workflows\pr-validation.yml = ..\.github\workflows\pr-validation.yml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{343FC8CD-3FBC-4B1C-A7AB-BB0F62B54A9F}"
+	ProjectSection(SolutionItems) = preProject
+		assets\logo.png = assets\logo.png
+		assets\Readme.md = assets\Readme.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +69,7 @@ Global
 		{7C350C4B-DA31-4C3C-A07D-8E011F3E4D00} = {C0A20887-D79A-4B79-89D4-79B69B53AD2E}
 		{C1D7D8C9-D634-464E-B938-3D3180538180} = {196AD78F-11F3-4A60-A51E-747C18A6BB1A}
 		{05DE59E3-EC60-4F00-83E6-A47605396A10} = {196AD78F-11F3-4A60-A51E-747C18A6BB1A}
+		{343FC8CD-3FBC-4B1C-A7AB-BB0F62B54A9F} = {196AD78F-11F3-4A60-A51E-747C18A6BB1A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F9AF03E7-0EA9-4D85-9D8C-6FE39EFB59E9}
